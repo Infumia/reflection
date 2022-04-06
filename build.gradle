@@ -30,14 +30,6 @@ jar {
   archiveVersion.convention(null)
 }
 
-processResources {
-  duplicatesStrategy = DuplicatesStrategy.INCLUDE
-  from(sourceSets["main"].resources.srcDirs) {
-    expand(["projectVersion": project.version])
-    include("test.yaml")
-  }
-}
-
 task sourcesJar(type: Jar, dependsOn: classes) {
   archiveBaseName.set(project.name)
   archiveBaseName.convention(project.name)
