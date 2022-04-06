@@ -1,4 +1,4 @@
-package tr.com.infumia.infumialib.reflection.parameterized;
+package tr.com.infumia.reflection.parameterized;
 
 import java.util.function.Supplier;
 import lombok.RequiredArgsConstructor;

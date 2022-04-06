@@ -1,4 +1,4 @@
-package tr.com.infumia.infumialib.reflection;
+package tr.com.infumia.reflection;
 
 import java.lang.annotation.Annotation;
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.BiConsumer;
 import org.jetbrains.annotations.NotNull;
-import tr.com.infumia.infumialib.reflection.cls.ClassOf;
+import tr.com.infumia.reflection.cls.ClassOf;
 
 /**
  * an interface to determine {@link Class}.

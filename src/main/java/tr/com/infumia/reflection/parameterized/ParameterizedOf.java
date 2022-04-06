@@ -1,10 +1,10 @@
-package tr.com.infumia.infumialib.reflection.parameterized;
+package tr.com.infumia.reflection.parameterized;
 
 import java.util.Optional;
 import java.util.function.Function;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
-import tr.com.infumia.infumialib.reflection.RefParameterized;
+import tr.com.infumia.reflection.RefParameterized;
 
 /**
  * a class that allows you to use the given objects as parameter types.

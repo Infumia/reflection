@@ -1,4 +1,4 @@
-package tr.com.infumia.infumialib.reflection.constructor;
+package tr.com.infumia.reflection.constructor;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import tr.com.infumia.infumialib.reflection.RefConstructed;
+import tr.com.infumia.reflection.RefConstructed;
 
 /**
  * an implementation for {@link RefConstructed}.

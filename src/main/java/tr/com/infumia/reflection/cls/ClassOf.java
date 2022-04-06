@@ -1,4 +1,4 @@
-package tr.com.infumia.infumialib.reflection.cls;
+package tr.com.infumia.reflection.cls;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
@@ -12,14 +12,14 @@ import java.util.logging.Level;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.jetbrains.annotations.NotNull;
-import tr.com.infumia.infumialib.reflection.RefClass;
-import tr.com.infumia.infumialib.reflection.RefConstructed;
-import tr.com.infumia.infumialib.reflection.RefField;
-import tr.com.infumia.infumialib.reflection.RefMethod;
-import tr.com.infumia.infumialib.reflection.constructor.ConstructorOf;
-import tr.com.infumia.infumialib.reflection.field.FieldOf;
-import tr.com.infumia.infumialib.reflection.method.MethodOf;
-import tr.com.infumia.infumialib.reflection.parameterized.ParameterizedOf;
+import tr.com.infumia.reflection.RefClass;
+import tr.com.infumia.reflection.RefConstructed;
+import tr.com.infumia.reflection.RefField;
+import tr.com.infumia.reflection.RefMethod;
+import tr.com.infumia.reflection.constructor.ConstructorOf;
+import tr.com.infumia.reflection.field.FieldOf;
+import tr.com.infumia.reflection.method.MethodOf;
+import tr.com.infumia.reflection.parameterized.ParameterizedOf;
 
 /**
  * an implementation for {@link RefClass}.

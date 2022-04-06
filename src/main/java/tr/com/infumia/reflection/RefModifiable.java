@@ -1,4 +1,4 @@
-package tr.com.infumia.infumialib.reflection;
+package tr.com.infumia.reflection;
 
 /**
  * an interface to determine modifiable objects.

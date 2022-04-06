@@ -1,4 +1,4 @@
-package tr.com.infumia.infumialib.reflection;
+package tr.com.infumia.reflection;
 
 import java.lang.annotation.Annotation;
 import java.util.Collection;

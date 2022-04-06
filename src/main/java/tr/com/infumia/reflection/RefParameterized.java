@@ -1,4 +1,4 @@
-package tr.com.infumia.infumialib.reflection;
+package tr.com.infumia.reflection;
 
 import java.util.Optional;
 import java.util.function.Function;
