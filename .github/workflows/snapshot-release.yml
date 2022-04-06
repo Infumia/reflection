@@ -1,13 +1,14 @@
-name: Snapshot Prerelease
+name: Snapshot Release
 
 on:
   release:
-    types: [ prereleased ]
+    types: [ published ]
 
 jobs:
   build:
-    name: Release
+    name: Snapshot Release
     runs-on: ubuntu-latest
+    if: "github.event.release.prerelease"
     steps:
       - uses: actions/checkout@v3
 
