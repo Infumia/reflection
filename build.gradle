@@ -1,0 +1,105 @@
+plugins {
+  id 'java'
+  id 'java-library'
+  id 'checkstyle'
+  id 'maven-publish'
+  id 'signing'
+  id 'io.github.gradle-nexus.publish-plugin' version '1.1.0'
+}
+
+group 'tr.com.infumia'
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+compileJava {
+  options.encoding = 'UTF-8'
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+  classifier 'sources'
+  from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+  javadoc.options.tags = ['todo']
+  javadoc.options.addBooleanOption('html5', true)
+  classifier 'javadoc'
+  from javadoc.destinationDir
+}
+
+checkstyle {
+  configFile = file('checkstyle.xml')
+  checkstyleTest.enabled = false
+}
+
+test {
+  useJUnitPlatform()
+}
+
+repositories {
+  mavenCentral()
+  maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+  mavenLocal()
+}
+
+dependencies {
+  // Annotations
+  compileOnlyApi "org.jetbrains:annotations:${annotations}"
+  annotationProcessor "org.jetbrains:annotations:${annotations}"
+  compileOnlyApi "org.projectlombok:lombok:${lombok}"
+  annotationProcessor "org.projectlombok:lombok:${lombok}"
+  testAnnotationProcessor "org.projectlombok:lombok:${lombok}"
+  testAnnotationProcessor "org.jetbrains:annotations:${annotations}"
+  // Annotations
+
+  testImplementation "org.junit.jupiter:junit-jupiter:${junitjupiter}"
+}
+
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      groupId project.group
+      artifactId project.name
+      version project.version
+
+      from components.java
+      artifact tasks.sourcesJar
+      artifact tasks.javadocJar
+      pom {
+        name = 'Reflection'
+        description = 'A simple reflection library for any Java projects.'
+        url = 'https://infumia.com.tr/'
+        licenses {
+          license {
+            name = 'MIT License'
+            url = 'https://mit-license.org/license.txt'
+          }
+        }
+        developers {
+          developer {
+            id = 'portlek'
+            name = 'Hasan Demirtaş'
+            email = 'utsukushihito@outlook.com'
+          }
+        }
+        scm {
+          connection = 'scm:git:git://github.com/infumia/reflection.git'
+          developerConnection = 'scm:git:ssh://github.com/infumia/reflection.git'
+          url = 'https://github.com/infumia/reflection'
+        }
+      }
+    }
+  }
+}
+
+signing {
+  useGpgCmd()
+  sign publishing.publications.mavenJava
+}
+
+nexusPublishing {
+  repositories {
+    sonatype()
+  }
+}
