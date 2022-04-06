@@ -9,23 +9,15 @@
 ### Maven
 
 ```xml
-<dependencies>
-  <dependency>
-    <groupId>tr.com.infumia</groupId>
-    <artifactId>reflection</artifactId>
-    <version>VERSION</version>
-  </dependency>
-</dependencies>
+<dependency>
+  <groupId>tr.com.infumia</groupId>
+  <artifactId>reflection</artifactId>
+  <version>VERSION</version>
+</dependency>
 ```
 
 ### Gradle
 
 ```groovy
-plugins {
-  id "java"
-}
-
-dependencies {
-  compileOnly "tr.com.infumia:reflection:VERSION"
-}
+implementation "tr.com.infumia:reflection:VERSION"
 ```
