@@ -1,14 +1,13 @@
-name: Release
+name: Continue to Release
 
 on:
   release:
-    types: [ published ]
+    types: [ released ]
 
 jobs:
   build:
-    name: Release
+    name: Continue to Release
     runs-on: ubuntu-latest
-    if: "!github.event.release.prerelease"
     steps:
       - uses: actions/checkout@v3
 

@@ -1,12 +1,12 @@
-name: Snapshot
+name: Update Snapshot
 
 on:
   push:
     branches: [ master ]
 
 jobs:
-  snapshot:
-    name: Upload snapshot
+  build:
+    name: Update Snapshot
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
