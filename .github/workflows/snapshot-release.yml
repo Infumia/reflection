@@ -37,8 +37,7 @@ jobs:
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
 
       - run: |
-          chmod +x gradlew
-          ./gradlew build javadocJar sourcesJar
+          gradlew build javadocJar sourcesJar
 
       - uses: softprops/action-gh-release@v1
         with:

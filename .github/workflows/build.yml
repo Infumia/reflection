@@ -30,6 +30,4 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradlew-
 
-      - run: |
-          chmod +x gradlew
-          ./gradlew build javadocJar sourcesJar
+      - run: gradle build javadocJar sourcesJar
