@@ -8,12 +8,8 @@ jobs:
   build:
     name: Update Snapshot
     runs-on: ubuntu-latest
+    if: !contains(github.event.head_commit.message, 'skip-snapshot')
     steps:
-      - run: |
-          echo "Test"
-          echo "${{ contains(github.event.pull_request.labels.*.name, 'skip-snapshot') }}"
-          echo "Test"
-
       - uses: actions/checkout@v3
 
       - uses: DeLaGuardo/setup-graalvm@5.0
