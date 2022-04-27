@@ -12,7 +12,7 @@ jobs:
       - run: |
           echo "Test"
           echo "{{ contains(github.event.pull_request.labels.*.name, 'skip-snapshot') }}"
-          echo "Test
+          echo "Test"
 
       - uses: actions/checkout@v3
 
