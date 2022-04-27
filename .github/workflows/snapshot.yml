@@ -8,7 +8,7 @@ jobs:
   build:
     name: Update Snapshot
     runs-on: ubuntu-latest
-    if: !contains(github.event.head_commit.message, 'skip-snapshot')
+    if: ${{ !contains(github.event.head_commit.message, 'skip-snapshot') }}
     steps:
       - uses: actions/checkout@v3
 
