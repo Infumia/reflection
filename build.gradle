@@ -1,6 +1,5 @@
 plugins {
   id 'java'
-  id 'java-library'
   id 'checkstyle'
   id 'maven-publish'
   id 'signing'
@@ -67,9 +66,9 @@ repositories {
 
 dependencies {
   // Annotations
-  compileOnlyApi "org.jetbrains:annotations:${annotations}"
+  compileOnly "org.jetbrains:annotations:${annotations}"
   annotationProcessor "org.jetbrains:annotations:${annotations}"
-  compileOnlyApi "org.projectlombok:lombok:${lombok}"
+  compileOnly "org.projectlombok:lombok:${lombok}"
   annotationProcessor "org.projectlombok:lombok:${lombok}"
   testAnnotationProcessor "org.projectlombok:lombok:${lombok}"
   testAnnotationProcessor "org.jetbrains:annotations:${annotations}"
